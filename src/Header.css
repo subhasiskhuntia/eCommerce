@@ -32,7 +32,7 @@ nav img{
 .header__searchInput{
     background-color: #7ee8fa;
     background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
-
+    /*hello*/
     width: 100vw;
     height: 25px;
     margin-left: 20px;
