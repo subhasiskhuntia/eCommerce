@@ -1,7 +1,7 @@
 *{
     margin:0;
-    width: 100%;
-    height:70px;
+    /* width: 100%;
+    height:70px; */
     /* background-color: black; */
     /* display: flex; */
 }
@@ -13,11 +13,10 @@
     position:fixed;
     top: 0;
     z-index: 100;
-}
-nav{
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    width: 100%;
+    height: 70px;
+    /* display: flex;
+    justify-content: flex-end; */
 }
 nav img{
     width:70px;
@@ -33,7 +32,7 @@ nav img{
     background-color: #7ee8fa;
     background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
 
-    width: 100vw;
+    width: 40vw;
     height: 25px;
     margin-left: 20px;
     margin-right: 10px;
@@ -53,6 +52,7 @@ nav img{
 .navigationLink{
     display: flex;
     justify-content: flex-end;
+    margin-left: auto;
 }
 .loginStatus,.order{
     color: whitesmoke;

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 function Header() {
     return (
         <nav className="header">
+            <div className="under"></div>
 
             {/* logo */}
 
