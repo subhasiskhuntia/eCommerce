@@ -1,0 +1,30 @@
+.bannerImage{
+    width: 100%;
+    height: auto;
+    mask-image: linear-gradient( to-buttom,rgb(178, 201, 172),rgb(0,0,0,0) );
+}
+.Home{
+    margin-top: 70px;
+    width:100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.imageContainer{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Products{
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
