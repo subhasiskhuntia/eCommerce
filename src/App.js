@@ -3,7 +3,7 @@ import React from 'react';
 import {BrowserRouter as Router , Switch , Route} from "react-router-dom"
 import Navbar from "./Header"
 import Home from "./Home"
-import ProductDetail from './ProductDetail';
+import ProductDetail from './Productdetail';
 // import {createContext,useContext} from "react"
 
 
@@ -25,6 +25,9 @@ function App() {
           </Route>
           <Route path="/login">
             <h1>login</h1>
+          </Route>
+          <Route exact path="/product">
+            <Home></Home>
           </Route>
           <Route path="/product/:id">
             <ProductDetail></ProductDetail>

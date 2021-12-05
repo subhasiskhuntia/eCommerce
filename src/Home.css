@@ -1,24 +1,30 @@
 .bannerImage{
-    width: 100%;
+    width: 80%;
     height: auto;
     mask-image: linear-gradient( to-buttom,rgb(178, 201, 172),rgb(0,0,0,0) );
+    object-fit: contain;
 }
 .Home{
     margin-top: 70px;
     width:100%;
     height: 100%;
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     
 }
 .imageContainer{
-    width: 100vw;
+    /* width: 100vw; */
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    top: 10px;
+    background-color: #E0F0F9;
 }
 .Products{
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 20px;
     margin-bottom: 20px;
     display: flex;
