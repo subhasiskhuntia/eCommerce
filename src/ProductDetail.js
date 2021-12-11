@@ -3,11 +3,12 @@ import {useParams} from "react-router-dom"
 import axios from "axios"
 import "./ProductDetail.css"
 import Loading from './Loading'
-import AddToCart from './addToCart'
 import {useContextFetch} from "./Context"
+import {contextCart} from "./Context"
 
 function ProductDetail() {
 
+    const cart=useContext(contextCart)
     const {id}=useParams()
     const [products,setProducts]=React.useState([])
     const [loading ,setLoading]=React.useState(true)
@@ -51,7 +52,8 @@ function ProductDetail() {
                         <div className="productPrice" style={{"marginBottom":"30px"}}>
                             <h2>${product.price}</h2>
                         </div>
-                        <button style={{"width":"120px","height":"60px","borderRadius":"10px","border":"none","backgroundColor":"#ff3e6c"}}onClick={()=>addingToCart(product.id)}>Buy Now</button>
+                        
+                        {cart.indexOf(product.id)===-1 ? <button style={{"width":"120px","height":"60px","borderRadius":"10px","border":"none","backgroundColor":"#ff3e6c"}}onClick={()=>addingToCart(product.id)}>Add to cart</button>:<button style={{"width":"120px","height":"60px","borderRadius":"10px","border":"none","backgroundColor":"#3e92ff"}}>Added to Cart</button>}
                     </div>
                 </div>
             </>

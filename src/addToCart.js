@@ -43,6 +43,8 @@ const AddToCart = () => {
         fetch({type:"remove",payload:id})
     }
 
+    
+
     return (
         <>
         {loading && <Loading></Loading>}
