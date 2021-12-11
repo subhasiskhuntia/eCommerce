@@ -1,7 +1,10 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import "./Header.css"
 import { Link } from "react-router-dom"
+import {contextCart} from './Context'
+
 function Header() {
+    const cart=useContext(contextCart)
     return (
         <nav className="header">
             <div className="under"></div>
@@ -45,7 +48,7 @@ function Header() {
                             alt="basket"
                             className= "cartIcon" />
                         </span>
-                        <span className="itemNumber">0</span>
+                        <span className="itemNumber">{cart.length}</span>
                     </div>
                 </Link>
             </div>

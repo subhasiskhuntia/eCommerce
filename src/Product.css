@@ -1,4 +1,4 @@
-.product{
+.product,#product{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +11,13 @@
     margin-right: 30px;
     margin-bottom: 30px;
 }
-.product>img{
+/* .LinkImage{
+    max-height: 10px;
+    max-width:150px;
+    object-fit:contain
+} */
+
+.product>img,.LinkImage>img{
     padding-top: 10px;
     max-width: 150px;
     object-fit: contain;
@@ -26,6 +32,7 @@
     align-items: center;
     flex-direction: column;
 }
+
 .productInfo h3{
     margin: 5px 0px;
 }

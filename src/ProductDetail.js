@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {useParams} from "react-router-dom"
 import axios from "axios"
 import "./ProductDetail.css"
 import Loading from './Loading'
+import AddToCart from './addToCart'
+import {useContextFetch} from "./Context"
+
 function ProductDetail() {
 
     const {id}=useParams()
@@ -20,10 +23,17 @@ function ProductDetail() {
         }
         newfunc();
         },[])
+
+    const dispatch=useContextFetch()
+    const addingToCart=(id)=>{
+        dispatch({type:"add",payload:id})
+
+    // const Cart=useContext(contextCart)
+    }
     
     const product=products.find((product)=>parseInt(id)===product.id)
-    console.log(typeof id)
-    console.log(product)
+    // console.log(typeof id)
+    // console.log(product)
     return (
     <>
             {loading  && <Loading></Loading> }
@@ -41,7 +51,7 @@ function ProductDetail() {
                         <div className="productPrice" style={{"marginBottom":"30px"}}>
                             <h2>${product.price}</h2>
                         </div>
-                        <button style={{"width":"120px","height":"60px","borderRadius":"10px","border":"none","backgroundColor":"#ff3e6c","fontFamily":"font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif"}}>Buy Now</button>
+                        <button style={{"width":"120px","height":"60px","borderRadius":"10px","border":"none","backgroundColor":"#ff3e6c"}}onClick={()=>addingToCart(product.id)}>Buy Now</button>
                     </div>
                 </div>
             </>

@@ -38,13 +38,13 @@ function Home() {
                 {loading && <Loading></Loading>}
                 {products.map((product)=>{
                     return(
-                    <Link style={{"textDecoration":"none","color":"black"}} to={`/product/${product.id}`}>
+                    <div>
                         <Product key={product.id} {...product}>
                         {/* <img src="https://i.ibb.co/jDNJzHC/y-FROa1638480320-1.jpg" 
             alt="banner"
             className="bannerImage" /> */}
                         </Product>
-                    </Link>
+                    </div>
                 )})}   
             </div>
         </div>

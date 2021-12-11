@@ -1,25 +1,34 @@
 import React from 'react'
 import "./Product.css"
-import {useEffect,useReducer} from "react"
+import {Link} from "react-router-dom"
+import {useEffect,useReducer,useContext} from "react"
+import {contextCart,contextFetch, useContextFetch} from "./Context"
 
 function Product({id,title,image,description,price}) {
-    console.log(typeof image)
     const rating=5
-    // const [cart,setCart]=useEffect([])
-    // const [state,dispath]=useReducer(reducer,defaultState)
+    const dispatch=useContextFetch()
+    const addingToCart=(id)=>{
+        dispatch({type:"add",payload:id})
+
+    // const Cart=useContext(contextCart)
+    }
     return (
         <div className="container">
-            <div className="product">
-                <img src={image} alt="image" className="productImage" />
+            <div className="product" id="product">
+                <Link to={`/product/${id}`} className="productImage" className="LinkImage">                
+                <img src={image} alt="image" className="productImage"/>
+                </Link>
                 <div className="productInfo">
+                <Link  style={{"textDecoration":"none","color":"black"}} to={`/product/${id}`}>
                 <h4>{title}</h4>
-                {/* <p>{description}</p> */}
+                </Link>
                 </div>
                 {/* <div>
                     {Array(rating).fill().map((_)=> <span className="star">&#x2B50;</span> )}
                     {Array(5-rating).fill().map((_)=> <span style={{"font-size":"25px"}} className="darkstar">&#9733;</span> )}</div> */}
                 <h3>💲{price}</h3>
-                <button className="buyNow" >Add to Cart</button>
+                <button className="buyNow" onClick={()=>addingToCart(id)}>Add to Cart</button>
+
             </div>
         </div>
     )

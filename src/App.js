@@ -4,6 +4,7 @@ import {BrowserRouter as Router , Switch , Route} from "react-router-dom"
 import Navbar from "./Header"
 import Home from "./Home"
 import ProductDetail from './Productdetail';
+import AddToCart from './addToCart';
 // import {createContext,useContext} from "react"
 
 
@@ -18,7 +19,7 @@ function App() {
             <Home></Home>
           </Route >
           <Route path="/cart">
-            <h1>Cart</h1>
+            <AddToCart></AddToCart>
           </Route>
           <Route path="/Order">
             <h1>order</h1>
